@@ -15,7 +15,7 @@ Il existe plusieurs manières d'insérer des documents dans une base MongoDB:
 Notes:
 - mentionner également le $out et le $merge du framework d'aggréation
 - Retryable writes à évoquer
-##--##
+##==##
 
 <!-- .slide: class="exercice" -->
 

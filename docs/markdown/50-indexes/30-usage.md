@@ -15,7 +15,7 @@
     - { age: 26, size: 180 } => <span class="important">n'utilise pas l'index</span>
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Quand sont utilisés les indexes pour trier (sort and index prefix)?
@@ -34,7 +34,7 @@
 
 Notes: Le reste des combinaisons ne marchera pas ! et n'utilisera pas l'index
 
-##--##
+##==##
 
 <!-- .slide: class="with-code inconsolata"-->
 # Quand sont utilisés les indexes pour trier (sort and Non-prefix Subset of an Index)?

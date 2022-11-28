@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Les collections
 
-##--##
+##==##
 <!-- .slide -->
 
 # Les différents types de collections
@@ -21,7 +21,7 @@ Auxquelles s'ajoutent les *vues*:
 Notes:
 * Les vues sont très pratiques pour enregistrer des pipelines d'aggrégation complexes
 
-##--##
+##==##
 <!-- .slide class="with-code"-->
 
 ## Les collections standards
@@ -42,7 +42,7 @@ db.getCollection("basic").insertOne({});
 db.createCollection("basic", {collation: {...}});
 ```
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 
 ## Les "capped" collections
@@ -64,7 +64,7 @@ db.getCollection("log").find();
 // --> [2, 3, 4, 5, 6]
 ```
 
-##--##
+##==##
 <!-- .slide -->
 
 ## Les collections timeseries
@@ -81,7 +81,7 @@ Notes:
 - elles sont structurées spécialement pour ça et pour les requêtes de type windows et aggregation sur les champs de temps
 
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 
 ## Création et insertion dans une collection *timeseries*
@@ -113,7 +113,7 @@ db.weather.insertMany([
 <!-- .element: class="full-height" -->
 
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 
 ## Exemple de requête d'aggrégation

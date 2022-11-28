@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Exemple d'opérateurs / accumulateurs d'aggrégation
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # L'opérateur: $add
@@ -17,7 +17,7 @@ Exemple
 db.sales.aggregate([{ $project: { item: 1, billing_date: { $add: [ "$date", 3*24*60*60000 ] } } }])
 ```
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # L'opérateur: $addToSet
@@ -38,7 +38,7 @@ db.sales.aggregate(
    ]
 )
 ```
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # L'opérateur: $push
@@ -60,7 +60,7 @@ db.sales.aggregate(
 )
 ```
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # L'opérateur: $avg
@@ -84,7 +84,7 @@ db.students.aggregate([
 ])
 ```
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # L'opérateur: $sum
@@ -108,7 +108,7 @@ db.students.aggregate([
 ])
 ```
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # L'opérateur $multiply

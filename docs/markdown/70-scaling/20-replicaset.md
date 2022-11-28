@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Replicaset
 
-##--##
+##==##
 # Les bases
 
 * 1 **Primary** member + N **Secondary** members (+ N **Arbiter** members)
@@ -15,7 +15,7 @@ Notes:
 - Max 7 arbiters replicaset
 -En production, on déploie **toujours au minimum** un replicaset à 3 data-bearing members.
 
-##--##
+##==##
 # L'élection du primaire
 
 Une élection pour déterminer le noeud primaire se déclenche lors de certains événements:
@@ -30,7 +30,7 @@ Notes:
 - On peut changer le poids de chaque noeud dans le vote
 - Il faut toujours avoir un nombre de noeuds impaire, sous peine de n'avoir jamais la majorité pour l'élection
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Le writeConcern
 
@@ -56,7 +56,7 @@ Notes:
 - j : journal wiredTiger
 - Avec un writeConcern à 0, il n'est pas possible de récupérer les _id d'insert par exemple
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Read Preference
 
@@ -77,7 +77,7 @@ Notes:
 - prefered: si le primary ou secondary n'est pas dispo, il est acceptable de lire sur l'autre type
 - nearest: basé sur la latency, maxStalenessSeconds et les tags
 
-##--##
+##==##
 # Initialiser un replicaset
 
 Pour démarrer un replicaset, il faut:<br><br>
@@ -88,7 +88,7 @@ Pour démarrer un replicaset, il faut:<br><br>
 
 --\> Fichier `docker-replicaset.yaml` pour lancer les serveurs facilement
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 
 Une fois connecté à l'un des futurs membres du replicaset, on l'initialise
@@ -119,7 +119,7 @@ rs.printReplicationInfo(); // Afficher des infos sur la réplication, surtout su
 rs.stepDown(); // Forcer au member en cours à ne plus être primary et déclencher une élection
 ```
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Replicaset
 
@@ -154,7 +154,7 @@ Notes:
 - La taille de l'oplog doit être suffisante pour contenir N heures ou jours de données
 - On peut modifier la taille de l'oplog désormais, ca n'était pas le cas avant la version 4.x de MongoDB
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Replicaset
 
@@ -186,7 +186,7 @@ Notes:
 - Ne PAS lire l'oplog directement : utiliser les change stream !
 
 
-##--##
+##==##
 <!-- .slide: class="exercice"-->
 
 ## Lab

@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Framework d'aggrégation
 
-##--##
+##==##
 
 <!-- .slide"-->
 # Qu'est ce qu'une aggrégation ?
@@ -18,7 +18,7 @@ En réalité, il y a 3 méthodes pour faire des aggrégats dans MongoDB:
 Notes:
 - On ne fait plus de Map Reduce, dur à écrire, lire et maintenir
 
-##--##
+##==##
 <!-- .slide -->
 # Aggregation Pipelines
 
@@ -33,7 +33,7 @@ Notes:
 - On peut enregistrer des pipelines d'aggrégation sous forme de vues
 <!-- .element: class="list-fragment" -->
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Exécuter une requête d'aggrégation
 

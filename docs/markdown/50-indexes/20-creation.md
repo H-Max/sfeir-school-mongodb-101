@@ -22,7 +22,7 @@ Notes:
 - options est également un object => { unique: true }
 - toutes les options ne sont pas dispos lorsqu'on créé plusieurs indexes en même temps
 
-##--##
+##==##
 
 <!-- .slide: class="with-code "-->
 # Récupération des indexes
@@ -33,7 +33,7 @@ Notes:
 db.collection.getIndexes();
 ```
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Création d'un Single index
@@ -68,7 +68,7 @@ Notes:
 - Lorsque l'on crée un index sur un document complet, une requête utilisant la dot notation dudit document n'utilisera pas l'index
 - Pour ca il y a les wildcard indexes dans MongoDB 4.2+, mais attention au poids de l'index
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Création d'un Compound index
@@ -97,7 +97,7 @@ Notes:
   - item & location
   - item & location & stock
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Création d'un Multikey index
@@ -122,7 +122,7 @@ Restriction: Un seul mutlikey index dans un compound index!
 <!-- .element: class="bold center important" -->
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Création d'un Text index
@@ -147,7 +147,7 @@ db.articles.find( { $text: { $search: "luxembourg" } } )
 - Les text index sont toujours sparse
 - Il est possible de créer un wildcard text index
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Création d'un Geospatial index

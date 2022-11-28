@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Les binaires et les outils
 
-##--##
+##==##
 <!-- .slide -->
 # Les indispensables
 Le serveur
@@ -15,7 +15,7 @@ Les IDEs
 * MongoDB Compass
 * Studio3T<br><br>
 
-##--##
+##==##
 <!-- .slide -->
 # mongotools
 Faire des backups en binaire:
@@ -30,7 +30,7 @@ Suivre des metrics:
 * `mongotop`
 * `mongostat`
 
-##--##
+##==##
 <!-- .slide: class="exercice"-->
 # Premiers pas
 ## Lab
@@ -42,7 +42,7 @@ Suivre des metrics:
 5. Restaurer les premières bases
 
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Premiers pas
 
@@ -69,7 +69,7 @@ docker-compose -f ./docker/docker-single.yaml down
 Notes:
 - Le fichier docker-compose se trouve dans le dossier `/docker` du repository
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Connexion
 
@@ -95,7 +95,7 @@ db.getCollectionNames();
 ```
 
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 
 Importer un fichier JSONL
@@ -122,7 +122,7 @@ Notes:
 - Mongoimport ne supporte les arrays JSON que de 16Mo max
 - Convertir les fichiers en JSONL avec jq pour pouvoir injecter + de volume
 
-##--##
+##==##
 
 <!-- .slide: class="exercice" -->
 

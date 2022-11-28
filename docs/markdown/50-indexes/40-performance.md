@@ -7,7 +7,7 @@ L'optimiseur de requêtes met uniquement en cache les plans pour les formes de r
 Pour chaque requête, le planificateur de requêtes recherche dans le cache du plan de requête une entrée qui correspond à la forme de la requête. S'il n'y a pas d'entrées correspondantes, le planificateur de requêtes génère des plans candidats à évaluer sur une période d'essai. Le planificateur de requêtes choisit un plan gagnant, crée une entrée de cache contenant le plan gagnant et l'utilise pour générer les documents de résultat.
 Si une entrée correspondante existe, le planificateur de requêtes génère un plan basé sur cette entrée et évalue ses performances via un mécanisme de replanification. Ce mécanisme prend une décision de réussite / d’échec en fonction des performances du plan et conserve ou supprime l’entrée du cache. Lors de l'expulsion, le planificateur de requêtes sélectionne un nouveau plan à l'aide du processus de planification normal et le met en cache. Le planificateur de requêtes exécute le plan et renvoie les documents de résultat pour la requête.
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Explication d'une requête
@@ -28,7 +28,7 @@ Notes:
 - allPlansExecution => il s'agit ici de montrer tous les plans qui ont été exécutés, même les moins performants
 - il existe des queryplanner visuel maintenant dans les IDEs / GUIs
 
-##--##
+##==##
 
 <!-- .slide-->
 # Un exemple en image

@@ -2,7 +2,7 @@
 # CRUD 
 ## Create - Read - Update - Delete
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Connexion à MongoDB
 

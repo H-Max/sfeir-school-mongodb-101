@@ -20,7 +20,7 @@ Notes:
 - on peut aussi faire de l'update via mongoimport avec les bonnes conditions dans la commande
 - Lorsqu'on veut simplement mettre à jour un document, il faut utiliser les "update operators"
 
-##--##
+##==##
 <!-- .slide-->
 # Les opérateurs d'update sur les champs simples
 
@@ -47,7 +47,7 @@ Notes:
 - $min : remplace la valeur d'un champ si et seulement si la valeur spécifiée est plus petite que la valeur du champ
 - $max : remplace la valeur d'un champ si et seulement si la valeur spécifiée est plus grande que la valeur du champ
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Quelques exemples
@@ -74,12 +74,12 @@ db.products.updateMany({},
 <br>
 
 ```javascript
-db.products.updateMany({ _id: 100 },
+db.products.updateOne({ _id: 100 },
     { $inc: { quantity: 1 } }
 )
 ```
 
-##--##
+##==##
 <!-- .slide-->
 # Les opérateurs d'update sur les tableaux
 
@@ -102,7 +102,7 @@ Notes:
 - { $set: { "grades.$" : 82 } }
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Quelques exemples
@@ -117,18 +117,18 @@ db.inventory.updateOne({ _id: 1 }, { $pop: { tags: 1 } })
 ```
 
 ```javascript
-db.inventory.updateMany( { _id: 1 }, { $pull: { votes: { $gte: 6 } } } )
+db.inventory.updateOne( { _id: 1 }, { $pull: { votes: { $gte: 6 } } } )
 ```
 
 ```javascript
-db.inventory.updateMany( { _id: 1 }, { $pullAll: { scores: [ 0, 5 ] } } )
+db.inventory.updateOne( { _id: 1 }, { $pullAll: { scores: [ 0, 5 ] } } )
 ```
 
 ```javascript
-db.inventory.updateMany({ _id: 1 }, { $push: { quizzes: { $each: [ { id: 3, score: 8 }, { id: 4, score: 7 }, { id: 5, score: 6 } ], $sort: { score: 1 } } } })
+db.inventory.updateOne({ _id: 1 }, { $push: { quizzes: { $each: [ { id: 3, score: 8 }, { id: 4, score: 7 }, { id: 5, score: 6 } ], $sort: { score: 1 } } } })
 ```
 
-##--##
+##==##
 
 <!-- .slide: class="exercice" -->
 

@@ -3,7 +3,7 @@
 
 ## Atelier collaboratif de modélisation
 
-##--##
+##==##
 
 <!-- .slide: class="exercice" -->
 
@@ -22,7 +22,7 @@
 Notes:
 - Timestamp du champ _id suffisant pour la création de la fiche ?
 
-##--##
+##==##
 
 # 2/ En réalité, pas si basique...
 ## Lab
@@ -43,7 +43,7 @@ Notes:
 - Distinguer la langue et la région : i18n vs locale
 
 
-##--##
+##==##
 <!-- .slide: class="exercice" -->
 
 # 3/ Disponibilité par magasin
@@ -55,8 +55,12 @@ La liste de ces magasins est stockés dans la base dans une autre collection, av
 
 Les produits peuvent être vendus et en stock (ou pas) les magasins. Comment le modéliser ?
 
+Notes:
+- En réalité, dès le départ, il ne faut pas stocker le stock dans le catalogue produit
+- Cette partie du lab sert à aller vers l'explication que le stock n'est pas une donnée produit
+- Et d'ailleurs, on ne stock pas un stock (...) mais des mouvements de stocks --> timeseries ?
 
-##--##
+##==##
 <!-- .slide: class="exercice" -->
 
 # 4/ Hétérogénéité

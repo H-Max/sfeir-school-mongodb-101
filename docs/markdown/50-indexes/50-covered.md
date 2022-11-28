@@ -4,7 +4,7 @@
 
 Il n'a pas été nécessaire d'aller lire le ou les documents: lire l'index a été suffisant car il contenait tous les champs demandés dans la réponse.
 
-##--##
+##==##
 
 <!-- .slide: class="with-code""-->
 # Et concrètement comment ça se matérialise?
@@ -28,7 +28,7 @@ Notes:
 
 Prendre MongoDB Compass pour faire une démonstration ;)
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # La règle Equality Sort Range

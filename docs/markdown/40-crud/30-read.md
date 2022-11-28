@@ -22,7 +22,7 @@ Notes:
 - findOne() retourne un document
 - find() et aggregate retourne des curseurs
 
-##--##
+##==##
 
 # Quelques exemples
 <!-- .slide: class="with-code"-->
@@ -54,7 +54,7 @@ Notes:
 - La deuxième requête ne prend pas en compte l'ordre des champs et il peut y avoir d'autres champs dans "name"
 - La troisième requête projette seulement les champs name et last_login
 
-##--##
+##==##
 
 # Requête sur les tableaux
 <!-- .slide: class="with-code"-->
@@ -86,7 +86,7 @@ Notes:
 - La quatrième va chercher les docs sans les tags dans la liste
 
 
-##--##
+##==##
 
 <!-- .slide-->
 # Exemples d'opérateurs disponibles
@@ -103,7 +103,7 @@ Notes:
 * `$and` / `$or`
 
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Exemples avec les opérateurs
 
@@ -126,7 +126,7 @@ Regular expression
 db.products.find( { sku: { $regex: /^ABC/i } } );
 ```
 
-##--##
+##==##
 
 <!-- .slide: class=" with-code"-->
 # Sort, Skip, Limit
@@ -143,7 +143,7 @@ db.users.find( { moyenne: { $lt: 10 } } ) .sort( { name: -1 } ).limit( 2 ).skip(
 * MongoDB exécutera toujours ces déclarations dans l'ordre `sort` > `skip` > `limit`
 * Pour les grosses opérations de tri, il est nécessaire de préciser l'option allowDiskUse() ou la requête échouera
 
-##--##
+##==##
 
 <!-- .slide-->
 # Distinct et count
@@ -152,7 +152,7 @@ db.users.find( { moyenne: { $lt: 10 } } ) .sort( { name: -1 } ).limit( 2 ).skip(
 - <b>Count</b>: Permet d'avoir le nombre total de documents matchant à votre query
 
 
-##--##
+##==##
 
 <!-- .slide: class="exercice" -->
 

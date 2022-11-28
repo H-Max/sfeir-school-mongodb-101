@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Sharding
 
-##--##
+##==##
 # Qu'est ce que le sharding ?
 
 * Le sharding consiste en distribuer la données entre plusieurs replicasets
@@ -14,7 +14,7 @@
 Notes:
 * C'est le scaling horizontal dans MongoDB
 
-##--##
+##==##
 # Principe de fonctionnement
 
 Un *sharded cluster* est composé des éléments suivants:<br/><br/>
@@ -30,7 +30,7 @@ Notes:
 - les config servers sont critques, s'ils sont perdus, la récupération des données devient très compliquées
 - les shards n'ont pas connaissance des autres shards, ils font partie d'un cluster shardé, mais seuls les mongos et les cfgsrv ont connaissance de tout
 
-##--##
+##==##
 # Activation du sharding
 
 * Par défaut, les collections ne sont pas shardées.<br/><br/>
@@ -45,7 +45,7 @@ Pour sharder une collection, il faut:
 Mais avant de songer à sharder une collection, il faut d'abord définir sa *shard key*...
 
 
-##--##
+##==##
 # Stratégie de sharding
 
 Il existe 3 stratégies de sharding différentes:
@@ -60,7 +60,7 @@ Notes:
 - zone sharding: on créée des zones (groupements de shards) et on attribue des ranges de clés à ces zones
 
 
-##--##
+##==##
 # Clé de sharding
 
 - La shard key conditionne la bonne distribution des documents entre les différents shards
@@ -73,7 +73,7 @@ Notes:
 - Il est possible de changer la shard key après coup, mais c'est une opération très lourde<br/><br/>
 
 
-##--##
+##==##
 # Chunks
 
 MongoDB découpe les collections en chunks qui sont répartis entre les shards en fonction de la shard key.
@@ -86,7 +86,7 @@ Notes:
 - Le balancer tourne sur le primary du replica set de config
 - Il est possible de le désactiver et de lui donner des plages horaires de fonctionnement
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 
 # Commandes utiles

@@ -17,7 +17,7 @@ Il existe plusieurs méthodes pour supprimer des documents dans MongoDB:
 Notes:
 - mentionner également le $out du framework d'aggrégation
 
-##--##
+##==##
 <!-- .slide: class="with-code"-->
 # Quelques exemples
 

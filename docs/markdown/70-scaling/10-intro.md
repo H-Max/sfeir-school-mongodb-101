@@ -2,7 +2,7 @@
 # Scaling
 ## Replication et sharding
 
-##--##
+##==##
 
 # Scaling vertical et horizontal
 
@@ -17,7 +17,7 @@ Avec le temps, la nécessité de scaler va se faire sentir pour répondre à dif
 Notes:
 - la localisation des données peut aussi être la conséquence des contraintes légales
 
-##--##
+##==##
 
 # Les solutions classiques
 

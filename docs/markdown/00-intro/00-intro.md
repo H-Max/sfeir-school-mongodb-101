@@ -9,9 +9,8 @@
 * À quand la pause ?<br/><br/>
 * À quelle heure mange t-on ?<br/><br/>
 * De quoi va-t-on parler?
-<!-- .element: class="list-fragment" -->
 
-##--##
+##==##
 <!-- .slide -->
 # Contenu de la formation
 
@@ -24,7 +23,6 @@ Au cours de la formation, nous découvrirons...
 * Les indexes
 * Le framework d'aggrégation
 * Les replicasets et le sharding
-<!-- .element: class="list-fragment" -->
 
 Notes:
 - Les avantages de MongoDB, on va les voir tout au long de la school

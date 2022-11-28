@@ -1,7 +1,7 @@
 {
   "name": "sfeir-school-mongodb-101",
   "version": "1.0.0",
-  "description": "Sfeir School 101 - MongoDB",
+  "description": "Sfeir School - MongoDB",
   "scripts": {
     "sass": "sass ./scss/slides.scss:./css/slides.css --source-map --watch",
     "sass-once": "sass ./scss/slides.scss:./css/slides.css --source-map",

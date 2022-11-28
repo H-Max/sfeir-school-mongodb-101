@@ -1,7 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Les stages d'aggrégation
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $match
@@ -23,7 +23,7 @@ db.articles.aggregate([ { $match : { author : "dave" } } ]);
 ```
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $project
@@ -44,7 +44,7 @@ db.books.aggregate( [ { $project : { title : 1 , author : 1 } } ] )
 - On peut aussi utiliser un enchaînement de stage `$set` et/ou `$unset`
 - `$set` est un synonymes de `$addFields`
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $addFields
@@ -71,7 +71,7 @@ db.scores.aggregate( [
 <!-- .element: class="medium-code" -->
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $skip
@@ -89,7 +89,7 @@ db.article.aggregate({ $skip : 5 });
 ```
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $limit
@@ -107,7 +107,7 @@ db.article.aggregate({ $limit : 5 });
 ```
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $sort
@@ -125,7 +125,7 @@ db.users.aggregate([{ $sort : { age : -1, posts: 1 } }])
 ```
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $unwind
@@ -151,7 +151,7 @@ db.inventory.aggregate([{"$unwind": "$volume"}, {"$unset":["_id"]}]);
 ```
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $group
@@ -175,7 +175,7 @@ db.books.aggregate([{ $group : { _id : {"author": "$author", "editor": "$editor"
 
 
 
-##--##
+##==##
 
 <!-- .slide: class="sfeir-basic-slide with-code"-->
 # Stage: $lookup
@@ -207,7 +207,7 @@ db.orders.aggregate([
 <!-- .element: class="medium-code" -->
 
 
-##--##
+##==##
 
 <!-- .slide: class="with-code"-->
 # Stage: $out

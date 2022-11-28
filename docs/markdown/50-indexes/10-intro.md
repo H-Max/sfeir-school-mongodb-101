@@ -1,6 +1,7 @@
 <!-- .slide: class="transition underline"-->
 # Indexation
 
+##==##
 <!-- .slide-->
 # Qu'est ce qu'un index
 - Un index est une structure de données utilisée et entretenue par le système <br/><br/>
@@ -9,7 +10,7 @@
     - Localiser plus rapidement les documents
     - Améliorer la performance
 
-##--##
+##==##
 
 <!-- .slide-->
 # Comment se matérialise un index dans MongoDB
@@ -19,7 +20,7 @@ Notes:
  Ici on peut observer comment MongoDB organise son indexation, il crée des "documents" ne possédant que le champs indexé et sa valeur.
  Si dans notre query (qu'elle soit de type range, égalitaire ou juste trie) on ne spécifie pas l'index alors, MongoDB réalisera une résolution de query par collection scan (scan de tous les documents de la collection)
 
-##--##
+##==##
 
 <!-- .slide-->
 # Les différents types d'index
@@ -33,7 +34,7 @@ Notes:
     - Wildcard index (MongoDB 4.2+)
     - Atlas Search index
 
-##--##
+##==##
 
 <!-- .slide-->
 # Les propriétés des indexes
