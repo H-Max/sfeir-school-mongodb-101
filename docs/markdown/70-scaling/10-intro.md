@@ -27,6 +27,9 @@ Notes:
 <br/><br/>
 * Mais on ne peut pas booster des machines indéfiniment...
 * Et cela ne résoud pas le problème de parallélisation de l'écriture ou de la proximité des données
+<br/><br/>
+C'est pour cela qu'il existe les *replicaSet* et le *sharding* !
+  
 
 Notes:
 - Faire le // avec les CDNs

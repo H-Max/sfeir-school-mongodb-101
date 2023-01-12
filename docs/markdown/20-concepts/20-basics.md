@@ -10,7 +10,7 @@
 
 * MongoDB stocke les documents en *BSON* = Binary JSON
   * Étend les types classiques JSON
-  * En ajoute de nouveaux comme ObjectID ou les dates
+  * Ajoute de nouveaux types comme ObjectID ou les dates
 
 Notes:
 - Clusters organisés en single node (dev only), replicasets ou shards
@@ -57,14 +57,12 @@ Notes:
 
 # Pour bien commencer
 
-* Une base de données *schemaless*
-  * En réalité on parle plutôt de *dynamic schema*
-  * Il est aujourd'hui possible de forcer des contraintes sur les documents<br/><br/>
+* *dynamic schema* plutôt que *schemaless*<br><br>
 * Regrouper les champs ensemble s'ils ont vocation à l'être
-  * Les *arrays*, *nested* fields et *nested* docs sont une des forces du modèle document
+  * Les *arrays*, *nested* fields et *nested* docs sont des atouts du modèle document
   * Gain de lisibilité et logique métier visible immédiatement
   * Gain de performance potentiel si correctement structuré<br/><br/>
-* Se poser les questions avant de stocker une donnée dans un document
+* Se poser les bonnes questions avant de stocker une donnée dans un document
   * Est-ce bien sa place ?
   * Est-ce que cette donnée devra être modifiée ? Souvent ?
   * Est-ce que cette donnée doit être associée à un timestamp ? Doit être historisée ?
@@ -81,7 +79,7 @@ Notes:
 
 # Simple rules
 
-## Ca n'est pas parce qu'on peut le faire qu'on doit le faire
+## *"Ca n'est pas parce qu'on peut le faire qu'on doit le faire"*
 
 * Ne *jamais* stocker différents types de données dans le même champ
   * Ne pas mélanger les types de nombres (`Int64`, `Float`, `Decimal`, etc.)
@@ -89,7 +87,7 @@ Notes:
   * Ne pas mélanger des éléments de types différents dans les mêmes tableaux<br><br>
 * Ne pas stocker les date/datetime en `string`, utiliser toujours le type `ISODate`
   * Moins lourd, plus rapide et offre toutes les possibilités de manipulation, dont les timezones<br><br>
-* Utiliser la notation *GeoJSON* avec les données géographiques
+* Utiliser la notation *GeoJSON* avec les données géographiques<br/><br/>
 * Ne pas donner des noms à rallonge inutilement aux champs, et toujours des noms clairs
   * "a_decide_de_se_desabonner": true
   * "who": "repeat"
@@ -104,11 +102,13 @@ Notes:
 * Requêtes qui ne fonctionnent pas
   * "1980-04-28" != ISODate("1980-04-28T00:00:00Z")
   * "2022" != 2022  
-  * MongoDB ne va rien retourner, mais ne va pas planter
+  * MongoDB retournera un résultat vide, mais ne va pas planter
+<br/><br/>
 * Problèmes de performance
-  * Manipuler le bon type, qui pèse le bon poids est toujours + performant
-* Maintenance compliquée
+  * Manipuler le bon type, qui pèse le bon poids, est toujours + performant
+<br/><br/>
+* Maintenance compliquée pour corriger les erreurs
 
 Notes:
 - En SQL, le typage est aussi vérifié à la requête, pas uniquement à l'écriture
-- Maintenance compliquée car aller corriger des données dans un modèle est souvent très pénible
+- Maintenance compliquée car aller corriger des données dans un modèle existant et déjà exposé est souvent très pénible

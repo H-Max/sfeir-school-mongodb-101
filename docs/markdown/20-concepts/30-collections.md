@@ -6,7 +6,7 @@
 
 # Les différents types de collections
 
-Il existe 3 grands types de *collections*:
+Il existe 3 types de *collections*:
 
 * Standard
 * Capped
@@ -14,8 +14,8 @@ Il existe 3 grands types de *collections*:
 <br/><br/>
 
 Auxquelles s'ajoutent les *vues*:
-* Ce ne sont pas des collections: elles ne stockent rien
-* Read-Only
+* Accessibles comme les collections
+* Toujours en lecture seule
 * Utilisent les indexes des collections sous-jacentes
 
 Notes:
@@ -26,7 +26,8 @@ Notes:
 
 ## Les collections standards
 
-* Créées à la volée la première fois qu'on y écrit<br/><br/>
+* Créées à la volée la première fois qu'on y écrit
+  * Ou via la commande createCollection s'il y a des options<br/><br/>
 * Taille maximale d'un document: 16Mo<br/><br/>
 * Aucune contrainte particulière
 
@@ -36,10 +37,10 @@ Notes:
 use mydb;
 
 // Création d'une collection à la volée
-db.getCollection("basic").insertOne({});
+db.getCollection("foo").insertOne({});
 
-// On peut aussi la créer explicitement si on veut y ajouter des propriétés
-db.createCollection("basic", {collation: {...}});
+// On peut aussi la créer explicitement si on veut y ajouter des options
+db.createCollection("bar", {collation: {...}});
 ```
 
 ##==##
@@ -47,14 +48,14 @@ db.createCollection("basic", {collation: {...}});
 
 ## Les "capped" collections
 
-* Collection FIFO (**F**irst **I**n  **F**irst **O**ut)
+* Collection FIFO (**F**irst **I**n **F**irst **O**ut)
 * ✔ Maintien l'ordre d'insertion lors de la lecture
 * ✔ Tailable Cursors
 * ❌ Écriture lors de transactions
 * ❌ Sharding<br/><br/>
 
 ```javascript
-// Max 1.000.0000 de documents dont le poids moyen serait 5Ko
+// Max 5 documents dont le poids moyen serait 1Mb / 5 = 200Ko 
 db.createCollection("log", { capped: true, size: 1000000, max: 5 } );
 
 db.getCollection("log").insertMany([{"a": 1}, {"a": 2}, {"a": 3}, {"a": 4}, {"a": 5}, {"a": 6}]);
@@ -67,14 +68,14 @@ db.getCollection("log").find();
 ##==##
 <!-- .slide -->
 
-## Les collections timeseries
+## Les collections *timeseries*
 
 * 🏁 À partir de MongoDB 5.x
 * ⚠️ Taille maximale d'un document: 4Mo
 * ❌ Change Stream
 * ❌ Schema validation 
 * ❌ Atlas Search
-* ❌ `$out` et `$merge`
+* ❌ Ne peut pas être la destination d'un `$out` ou `$merge`
 
 Notes:
 - les timeseries servent à stocker des données IoT ou des données de type événements
@@ -101,12 +102,12 @@ db.weather.insertMany([
    {
       "metadata": { "sensorId": 1337, "type": "temperature" },
       "timestamp": ISODate("2022-11-25T08:00:00.000Z"),
-      "temp": 700
+      "temperature": 700
    },
    {
       "metadata": { "sensorId": 1337, "type": "temperature" },
       "timestamp": ISODate("2022-11-25T04:00:00.000Z"),
-      "temp": 632
+      "temperature": 632
    }
 ]);
 ```
@@ -118,22 +119,26 @@ db.weather.insertMany([
 
 ## Exemple de requête d'aggrégation
 
+Calcul de la température moyenne par mois:
+
 ```javascript
 db.weather.aggregate( [
    {
       $project: {
           date: {$dateToParts: { date: "$timestamp" }},
-          temp: 1
+          temperature: 1
       }
    },
    {
       $group: {
          _id: {
-             date: {year: "$date.year"}
+             date: {year: "$date.month"}
          },
-         avgTmp: { $avg: "$temp" }
+         avgTmp: { $avg: "$temperature" }
       }
    }
 ]);
 ```
 <!-- .element: class="max-height" -->
+
+Notes: c'est le bon moment de voir la différence entre un champ et une expression
