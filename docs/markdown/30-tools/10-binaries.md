@@ -31,18 +31,6 @@ Suivre des metrics:
 * `mongostat`
 
 ##==##
-<!-- .slide: class="exercice"-->
-# Premiers pas
-## Lab
-
-1. Démarrer l'instance seule avec docker
-2. Se connecter à cette instance via le shell ou Compass
-3. Lister les bases de données   
-4. Insérer des données en provenance d'un petit JSON
-5. Restaurer les premières bases
-
-
-##==##
 <!-- .slide: class="with-code"-->
 # Premiers pas
 
@@ -56,7 +44,7 @@ mongod --f /path/to/config --port 28666
 ```
 <br/>
 
-Démarrer une instance simple avec docker
+Démarrer une instance unique avec docker
 
 ```bash
 # Démarrer l'instance
@@ -79,7 +67,7 @@ Se connecter à une instance
 mongosh school --port 27017 --quiet
 
 # À une instance Atlas
-mongosh "mongodb+srv://sfeir-school-mongodb-10.66yzg.mongodb.net/school" --apiVersion 1 --username school
+mongosh "mongodb+srv://sfeir-school.66yzg.mongodb.net/school" --apiVersion 1 --username school
 ```
 
 Lister et choisir une base de données
@@ -122,15 +110,14 @@ Notes:
 - Mongoimport ne supporte les arrays JSON que de 16Mo max
 - Convertir les fichiers en JSONL avec jq pour pouvoir injecter + de volume
 
+
 ##==##
-
-<!-- .slide: class="exercice" -->
-
-# Importer des données
+<!-- .slide: class="exercice"-->
+# Premiers pas
 ## Lab
-<br/>
 
-1. importer des collections
-2. importer un fichier JSON
-
-<br/>
+1. Démarrer l'instance seule avec docker
+2. Se connecter à cette instance via le shell ou Compass
+3. Lister les bases de données
+4. Restaurer les premières bases
+5. Insérer des données en provenance d'un petit JSON

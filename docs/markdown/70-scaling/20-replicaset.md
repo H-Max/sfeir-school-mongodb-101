@@ -2,11 +2,26 @@
 # Replicaset
 
 ##==##
+# Définition
+
+Un replicaset est un groupe de noeuds MongoDB qui se synchronisent ensemble, automatiquement.
+
+Ils sont essentiels en *production* car ils assurent:
+* La copie des données sur plusieurs serveurs
+    * donc plusieurs lieux géographiques
+* La continuité de service en cas de problème sur l'infrastructure
+* La capacité de faire de la rolling-maintenance et de tendre vers le zero-downtime
+
+Notes:
+Sur MongoDB Atlas, on a pas le choix, on ne peut avoir que des Replicaset
+
+##==##
 # Les bases
 
 * 1 **Primary** member + N **Secondary** members (+ N **Arbiter** members)
 * Les opérations d'écritures se font exclusivement sur le primaire 
 * Les secondaires écoutent un "oplog" du primary pour répliquer les écritures
+* Un replicaset a toujours un nom, par exemple myrs-01
 
 ![center h-500](assets/images/mongodb/replicaset/concept.svg)
 
@@ -121,9 +136,7 @@ rs.stepDown(); // Forcer au member en cours à ne plus être primary et déclenc
 
 ##==##
 <!-- .slide: class="with-code"-->
-# Replicaset
-
-## Fonctionnement de l'oplog
+# Fonctionnement de l'oplog
 
 Exemple d'opération d'écriture unique
 ```javascript
@@ -178,6 +191,7 @@ coll.updateMany({"grades.grade": "C"}, {"$set": {"oplog": true}}); // modifiedCo
     o2: { _id: ObjectId("5eb3d669b31de5d588f484b9") },
     ts: Timestamp({ t: 1669283147, i: 878 })
   }
+  ...
 ```
 
 Notes:

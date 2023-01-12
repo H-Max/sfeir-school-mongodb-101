@@ -31,9 +31,9 @@ Notes:
 * Base de données NOSQL orientée *document*<br/><br/>
 * Écrite en C++, GO, Javascript et Python par la société Mongo<br/><br/>
 * Première version en 2009, version actuelle 6.0 (été 2022)
-  * Support des transactions depuis 2018 (4.0)
-  * MongoDB Atlas lancé en 2017
-  * Serverless lancé en 2021  
+  * Support des *transactions* depuis 2018 (4.0)
+  * MongoDB *Atlas* lancé en 2017
+  * *Serverless* lancé en 2021  
   * Rapid Release depuis la version 5.x
 
 Notes:

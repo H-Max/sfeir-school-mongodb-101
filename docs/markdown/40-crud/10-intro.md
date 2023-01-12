@@ -13,14 +13,11 @@
 mongosh school --port 27017
 
 # Atlas
-mongosh "mongodb+srv://sfeir-school-mongodb-10.66yzg.mongodb.net/school" --apiVersion 1 --username school
+mongosh "mongodb+srv://sfeir-school.66yzg.mongodb.net/school" --apiVersion 1 --username school
 ```
 
 ## Via MongoDB Compass
 
 ```
-mongodb+srv://school:PASSWORD@sfeir-school-mongodb-10.66yzg.mongodb.net/school
+mongodb+srv://school:PASSWORD@sfeir-school.66yzg.mongodb.net/school
 ```
-
-Notes:
-- GaletteSaucisse

@@ -12,11 +12,11 @@
 
 * id interne, marque et nom du produit
 * prix en EUR
-* stock en cours
+* stock
 * statut en vente / pas en vente
 * poids et dimension du carton
 * ean (code-barre)
-* date de création de la fiche 
+* date de création du produit en base 
 * date de mise en vente
 
 Notes:
@@ -76,3 +76,4 @@ En tout, il y a plus de *1700 caractéristiques différentes*.
 Notes:
 - Les produits sont variés et ont des caractéristiques différentes:
 - Quelles solutions pour modéliser ceci dans les documents ?
+- Cette partie permet de mettre en évidence l'interêt d'avoir un schéma dynamique 
